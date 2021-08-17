@@ -7,7 +7,7 @@ localNascimento = "Araruna"
 altura = 1.70
 trabalhando = true
 
-apresentacao = "Meu nome é " + nomeCompleto + " (sou conhecido[a] como " + apelido + ") e tenho " + idade + " anos. Nasci no dia " + dataNascimento + ", na cidade de " + localNascimento + ". Tenho " + altura + "m de altura e atualmente estou " + (trabalhando ? "empregado" : "desempregado") + "."
+apresentacao = "Meu nome é " + nomeCompleto + " (sou conhecido[a] como " + apelido + ") e tenho " + idade + " anos. Nasci no dia " + dataNascimento + ", na cidade de " + localNascimento + ". Tenho " + altura.toFixed(2) + "m de altura e atualmente estou " + (trabalhando ? "empregado" : "desempregado") + "."
 
 console.log(apresentacao);
 
@@ -57,3 +57,43 @@ saldo = saldoConta * 0.25
 saldo = saldoConta / 2
 
 console.log("O saldo da conta é de R$ " + saldo.toFixed(2) + " reais");
+
+//calcula o IMC de uma pessoa com base no peso dividido pela altura elevado ao quadrado
+
+peso = 93
+altura = 1.70
+
+imc = ((peso / altura ** 2).toFixed(2))
+
+classificacao = ""
+grau = 0
+
+if ( imc < 18.5 ) {
+  classificacao = "seu nível de classificação é de Magreza "
+
+} else if ( imc < 25 ) {
+  classificacao = "seu nível de classificação de peso é Normal "
+
+} else if ( imc < 30 ) {
+  classificacao = "seu nível de classificação de peso é Sobrepeso "
+  grau = 1
+
+} else if ( imc < 40 ) {
+  classificacao = "seu nível de classificação de peso é Obeso "
+  grau = 2
+
+} else {
+  classificacao = ("seu nível de classificação de peso é Obesidade ")
+  grau = 3
+}
+
+console.log("Seu IMC é de " + imc + " e " + classificacao)
+
+if ( grau > 0 ) {
+  console.log("Cuidado! Você está acima do peso recomendado pela OMS.")
+
+  if (grau == 3) {
+    console.log("É importante procurar um médico para avaliar sua saúde.")
+  }
+
+}
