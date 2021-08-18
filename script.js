@@ -1,4 +1,4 @@
-//presentacao de perfil pessoal
+//apresentacao de perfil pessoal
 nomeCompleto = "Eduardo Davis"
 apelido = "mens"
 idade = 30
